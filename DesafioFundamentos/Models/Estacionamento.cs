@@ -15,11 +15,17 @@ namespace DesafioFundamentos.Models
         public void AdicionarVeiculo()
         {
             Console.Write($"Digite a Placa do veiculo a ser adicionado: ");
-            string placaDoVeiculo = Console.ReadLine();
+            string placa = Console.ReadLine();
+            if (veiculos.Any(x => x.ToUpper() == placa.ToUpper()))
+            {
+                Console.WriteLine("Veiculo já cadastrado");
 
-            veiculos.Add(placaDoVeiculo);
-
-            Console.Write($"Veiculo da placa - ( {placaDoVeiculo} ) |Adicionado ✅️\n");
+            }
+            else
+            {
+                veiculos.Add(placa);
+                Console.Write($"Veiculo da placa - ( {placa} ) |Adicionado ✅️\n");
+            }
         }
 
         public void RemoverVeiculo()
@@ -50,9 +56,9 @@ namespace DesafioFundamentos.Models
             if (veiculos.Any())
             {
                 Console.WriteLine("Os veículos estacionados são:");
-                foreach (string itemVeiculos in veiculos)
+                foreach (string itemVeiculo in veiculos)
                 {
-                    Console.WriteLine(itemVeiculos);
+                    Console.WriteLine(itemVeiculo);
                 }
             }
             else
