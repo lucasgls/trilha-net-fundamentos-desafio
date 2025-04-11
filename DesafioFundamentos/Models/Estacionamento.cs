@@ -47,12 +47,13 @@ namespace DesafioFundamentos.Models
 
         public void ListarVeiculos()
         {
-            // Verifica se há veículos no estacionamento
             if (veiculos.Any())
             {
                 Console.WriteLine("Os veículos estacionados são:");
-                // TODO: Realizar um laço de repetição, exibindo os veículos estacionados
-                // *IMPLEMENTE AQUI*
+                foreach (string itemVeiculos in veiculos)
+                {
+                    Console.WriteLine(itemVeiculos);
+                }
             }
             else
             {
